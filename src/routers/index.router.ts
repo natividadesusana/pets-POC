@@ -1,5 +1,5 @@
 import { Router } from "express";
-import petsRouter from "./pets-router";
+import petsRouter from "@/routers/pets-router";
 
 const router = Router();
 
