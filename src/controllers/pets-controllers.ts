@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import * as petsServices from "@/services/pets-services";
 import { isIdValid } from "@/utils/id-validator";
 import httpStatus from "http-status";
-import { PetCreateOrUpdate } from "@/protocols/pet";
+import { PetCreateInput } from "@/protocols/pet";
 
 export async function getAll(req: Request, res: Response) {
   const pets = await petsServices.getAll();
@@ -18,7 +18,7 @@ export async function getById(req: Request, res: Response) {
 }
 
 export async function create(req: Request, res: Response) {
-  const pet = req.body as PetCreateOrUpdate;
+  const pet = req.body as PetCreateInput;
   await petsServices.create(pet);
   // const newPet = await petsServices.create(pet);
 
@@ -30,7 +30,7 @@ export async function update(req: Request, res: Response) {
   const id = parseInt(req.params.id);
   if (!isIdValid(id)) return res.sendStatus(httpStatus.BAD_REQUEST);
 
-  const pet = req.body as PetCreateOrUpdate;
+  const pet = req.body as PetCreateInput;
   await petsServices.update(id, pet);
 
   res.sendStatus(httpStatus.OK);
