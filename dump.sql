@@ -198,6 +198,7 @@ INSERT INTO public.owners VALUES (2, 'Felisberto Freire');
 INSERT INTO public.pets VALUES (1, 'Bulldog Francês', 'Bruce', 3, 1, 1);
 INSERT INTO public.pets VALUES (2, 'Golden Retriever', 'Max', 2, 2, 2);
 INSERT INTO public.pets VALUES (3, 'Bulldog Inglês', 'Filó', 6, 1, 1);
+INSERT INTO public.pets VALUES (6, 'Pug', 'Juca', 8, 1, 2);
 
 
 --
@@ -218,7 +219,7 @@ SELECT pg_catalog.setval('public.owners_id_seq', 2, true);
 -- Name: pets_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.pets_id_seq', 5, true);
+SELECT pg_catalog.setval('public.pets_id_seq', 7, true);
 
 
 --
